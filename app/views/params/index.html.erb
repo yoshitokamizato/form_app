@@ -1,0 +1,39 @@
+
+<h1>入力フォームの練習</h1>
+<hr/>
+
+<h2>POSTメソッド</h2>
+<%= form_tag('/params', method: :post) do %>
+  <div class="text">
+    <p>好きな料理を入力：<%= text_field_tag :food, '', placeholder: '例）チャーハン' %></p>
+    <p>好きなスポーツ：<%= text_field_tag :sports, '', placeholder: '例）フットサル' %></p>
+    <p>好きな本：<%= text_field_tag :book, '', placeholder: '例）Ruby on Rails' %></p>
+  </div>
+  <input type="submit" value="送信">
+<% end %>
+<hr/>
+<h2>GETメソッド</h2>
+<%= form_tag('/params/new', method: :get) do %>
+
+  <div class="text">
+    <p>好きな料理を入力：<%= text_field_tag :food, '', placeholder: '例）チャーハン' %></p>
+    <p>好きなスポーツ：<%= text_field_tag :sports, '', placeholder: '例）フットサル' %></p>
+    <p>好きな本：<%= text_field_tag :book, '', placeholder: '例）Ruby on Rails' %></p>
+  </div>
+  <input type="submit" value="送信">
+
+<% end %>
+<hr/>
+<h2>CheckBox</h2>
+<p>ディナーを選択：</p>
+<%= form_tag('/params', method: :post) do %>
+  <div class="text">
+    <!-- 内側にlabelを書くと文字の上でしかチェックボックスが入らない -->
+    <!-- 'dinner[]'と書くとcheckboxのパラメータを配列で受け取れる-->
+    <label><p><%= check_box_tag 'dinner[]', "ステーキ" %>ステーキ</p></label>
+    <!-- 外側にlabelを書くと行全体にチェックボックスの範囲が広がる -->
+    <label><p><%= check_box_tag 'dinner[]', "ワイン" %>ワイン</p></label>
+    <label><p><%= check_box_tag 'dinner[]', "ケーキ" %>ケーキ</p></label>
+  </div>
+  <input type="submit" value="送信">
+<% end %>
