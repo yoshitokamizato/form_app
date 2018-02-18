@@ -1,0 +1,12 @@
+<h2>駅を選択</h2>
+<%= form_tag('/station', method: :post) do %>
+  <div class="text">
+    <p>候補1：<%= text_field_tag 'station[]' %></p>
+    <p>候補2：<%= text_field_tag 'station[]' %></p>
+    <p>候補3：<%= text_field_tag 'station[]' %></p>
+    <p>候補4：<%= text_field_tag 'station[]' %></p>
+    <p>候補5：<%= text_field_tag 'station[]' %></p>
+  </div>
+  <input type="submit" value="送信">
+<% end %>
+<%= @sta1.station %>

@@ -1,0 +1,5 @@
+<h1>削除完了〜！！！</h1>
+<% @sta.each do |s| %>
+    <p><%= s.station %></p>
+    <%= link_to '削除', "/station/#{s.id}", method: :delete %> 
+<% end %>
